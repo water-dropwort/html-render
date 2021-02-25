@@ -1,0 +1,43 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 364b2cb38c6ec3029bf6ed48413358cb85b9ab3f91c62e8205e8ed68e63b00de
+
+name:           html-render
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Tokenizer
+    , TreeConstructor
+    , UrlParser
+  other-modules:
+      Paths_html_render
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , parsec
+    , containers
+  default-language: Haskell2010
+
+executable html-render-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_html_render
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , html-render
+    , bytestring
+    , http-client
+    , http-types
+    , network
+    , parsec
+  default-language: Haskell2010
